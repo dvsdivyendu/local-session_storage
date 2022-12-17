@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+    <script>
+        var abc=localStorage.getItem("code");
+        if(abc=="secret"){
+
+        }else{
+            window.location.href="loginpage.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="home">
+        <h1>welcome:<script>document.write(localStorage.get("Username1"))</script></h1>
+        <p>Home Page</p>
+    </div>
+    <a href="logout.html">Logout</a>
+</body>
+</html>

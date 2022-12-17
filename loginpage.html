@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function RememberMe(){
+            var name=document.getElementById("Username").value;
+            var pass=document.getElementById("Password").value;
+    
+            localStorage.setItem("Username1",name)
+            localStorage.setItem("Password1",pass)
+            sessionStorage.setItem("Username1",name)
+            sessionStorage.setItem("Password1",pass)
+            document.getElementById("Username").value="";
+            document.getElementById("Password").value="";
+            alert("successfully remembered");
+        }
+        function login(){
+            var user=document.getElementById("Username").value
+            var pass=document.getElementById("Password").value
+            var ul=localStorage.getItem("Username1");
+            var pl=localStorage.getItem("Password1");
+            
+            if(user==ul && pass==pl)
+            {
+                localStorage.setItem("code","secret");
+                window.location.href="homepage.html";
+                alert("correct")
+            }else{
+                window.location.href="loginpage.html";
+                alert("you have entered incorrect email and password");
+            }
+        }
+       </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form >
+            <div class="text">
+                <input type="text" id="Username" >
+                <label >User name</label>
+            </div>
+            <div class="text">
+                <input type="text" id="Password">
+                <label>Password</label>
+            </div>
+            <div class="remember">
+                <input type="checkbox">
+                <button type="button" onclick="RememberMe()" >Remember Me</button>
+            </div>
+            <button class="login-but" onclick="login()" >Login</div></button>
+        </form>
+    </div>
+        </body>
+    </body>
+   
+    
+</body>
+</html>
